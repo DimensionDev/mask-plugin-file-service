@@ -1,0 +1,12 @@
+{
+    "references": [
+        { "path": "./src/tsconfig.shared.json" },
+        { "path": "./src/tsconfig.site-adaptor.json" },
+        { "path": "./src/tsconfig.worker.json" }
+    ],
+    "extends": "@masknet/configs/tsconfig.json",
+    "compilerOptions": {
+        "types": ["@masknet/plugin-types"],
+        "moduleResolution": "Node"
+    }
+}

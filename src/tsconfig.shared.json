@@ -1,0 +1,10 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "rootDir": "shared",
+        "outDir": "../dist/shared",
+        "tsBuildInfoFile": "../dist/shared.tsbuildinfo",
+        "resolveJsonModule": true
+    },
+    "include": ["shared", "shared/**/*.json"]
+}

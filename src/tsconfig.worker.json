@@ -1,0 +1,11 @@
+{
+    "references": [{ "path": "./tsconfig.shared.json" }],
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "rootDir": "worker",
+        "outDir": "../dist/worker",
+        "tsBuildInfoFile": "../dist/worker.tsbuildinfo",
+        "resolveJsonModule": true
+    },
+    "include": ["worker", "worker/**/*.json"]
+}
