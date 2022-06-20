@@ -2,9 +2,10 @@ lockfileVersion: 5.4
 
 specifiers:
   '@dimensiondev/common-protocols': 1.6.0-20210723072221-8f46a92
-  '@dimensiondev/kit': 0.0.0-20220512140759-bed2b46
+  '@dimensiondev/kit': 0.0.0-20220530040115-749789e
   '@ethersphere/bee-js': ^4.1.1
   '@masknet/configs': link:../mask-plugin-infra/packages/configs
+  '@masknet/plugin-cli': link:../mask-plugin-infra/packages/cli
   '@masknet/plugin-types': link:../mask-plugin-infra/packages/plugin-types
   '@msgpack/msgpack': ^2.7.2
   '@mui/material': ^5.8.1
@@ -22,9 +23,10 @@ specifiers:
 
 devDependencies:
   '@dimensiondev/common-protocols': 1.6.0-20210723072221-8f46a92
-  '@dimensiondev/kit': 0.0.0-20220512140759-bed2b46
+  '@dimensiondev/kit': 0.0.0-20220530040115-749789e
   '@ethersphere/bee-js': 4.1.1
   '@masknet/configs': link:../mask-plugin-infra/packages/configs
+  '@masknet/plugin-cli': link:../mask-plugin-infra/packages/cli
   '@masknet/plugin-types': link:../mask-plugin-infra/packages/plugin-types
   '@msgpack/msgpack': 2.7.2
   '@mui/material': 5.8.1_@types+react@18.0.9
@@ -60,8 +62,8 @@ packages:
       '@msgpack/msgpack': 1.12.2
     dev: true
 
-  /@dimensiondev/kit/0.0.0-20220512140759-bed2b46:
-    resolution: {integrity: sha512-3FJy3d+yvSpZhmiFzbLv+dMhRQvjzs3KC2lJ/QOJffBmmUfuQt6Nxf21eTjc0zqPGcYb0iHN6YIM15HtQeR3CA==, tarball: download/@dimensiondev/kit/0.0.0-20220512140759-bed2b46/6fae0cca3b21d0d9a0ddc4630a11e0a5f29db1d6bc9b20d4d2ac8f9d4ff9c13c}
+  /@dimensiondev/kit/0.0.0-20220530040115-749789e:
+    resolution: {integrity: sha512-vzLYReDY4MkcaLNb5Y6ta+X0QfG8JmnSjE2TiRldT40HJgCQDN3qI0ct7McmiiCvsiWmCBj84hjoHoEoUw4D/A==, tarball: download/@dimensiondev/kit/0.0.0-20220530040115-749789e/0700acb401bffe0a9215473be1ac8835da609b71d2f57fbc83cd9f6f0e111a51}
     dependencies:
       lodash-es: 4.17.21
     dev: true
@@ -280,10 +282,7 @@ packages:
     resolution: {integrity: sha512-7LgUtCvz78676iC0wpTH7HizMdCrTphhBmRWimIMFrp5Ph6JbDFVuKS1CwYnWWxRyYKL0QzXrDL0lptAU90EXg==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
-      react: ^17.0.0 || ^18.0.0 || 18
-    peerDependenciesMeta:
-      react:
-        optional: true
+      react: ^17.0.0 || ^18.0.0
     dependencies:
       '@babel/runtime': 7.17.9
       '@types/prop-types': 15.7.5

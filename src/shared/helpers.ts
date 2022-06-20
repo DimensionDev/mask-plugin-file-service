@@ -1,9 +1,6 @@
 import { type FileInfo, type FileInfoV1, Provider } from './types.js'
 import { isNil } from 'lodash-unified'
 import { encodeArrayBuffer, encodeText } from '@dimensiondev/kit'
-// @ts-ignore TODO
-import { createLookupTableResolver } from '@masknet/web3-shared-base'
-
 export function FileInfoV1ToV2(info: FileInfoV1): FileInfo {
     return { ...info, type: 'file', provider: 'arweave' as Provider }
 }
@@ -19,11 +16,10 @@ export async function makeFileKeySigned(fileKey: string | undefined | null) {
     return [signed, exportedKey].map(encodeArrayBuffer)
 }
 
-export const resolveGatewayAPI = createLookupTableResolver<Provider, string>(
-    {
+export const resolveGatewayAPI = (provider: Provider) => {
+    return {
         [Provider.arweave]: 'https://arweave.net',
         [Provider.ipfs]: 'https://infura-ipfs.io/ipfs',
         [Provider.swarm]: 'https://bee-2.gateway.ethswarm.org/bzz',
-    },
-    () => 'Unknown provider'
-)
+    }[provider]
+}

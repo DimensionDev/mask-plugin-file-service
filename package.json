@@ -4,11 +4,15 @@
   "exports": {
     ".": "./dist/index.js"
   },
+  "scripts": {
+    "build": "mask-plugin-build"
+  },
   "types": "./dist/index.d.ts",
   "devDependencies": {
     "@dimensiondev/common-protocols": "1.6.0-20210723072221-8f46a92",
-    "@dimensiondev/kit": "0.0.0-20220512140759-bed2b46",
+    "@dimensiondev/kit": "0.0.0-20220530040115-749789e",
     "@ethersphere/bee-js": "^4.1.1",
+    "@masknet/plugin-cli": "link:../mask-plugin-infra/packages/cli",
     "@masknet/configs": "link:../mask-plugin-infra/packages/configs",
     "@masknet/plugin-types": "link:../mask-plugin-infra/packages/plugin-types",
     "@msgpack/msgpack": "^2.7.2",
