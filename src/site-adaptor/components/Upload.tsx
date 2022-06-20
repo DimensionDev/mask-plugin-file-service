@@ -121,6 +121,7 @@ export function Upload() {
         provider === Provider.arweave ? (
             <FormControlLabel
                 control={
+                    // @ts-expect-error
                     <Checkbox color="primary" checked={useCDN} onChange={(event) => setUseCDN(event.target.checked)} />
                 }
                 className={classes.usedCDN}
@@ -140,6 +141,7 @@ export function Upload() {
                         <Checkbox
                             color="primary"
                             checked={encrypted}
+                            // @ts-expect-error
                             onChange={(event) => setEncrypted(event.target.checked)}
                         />
                     }

@@ -79,9 +79,11 @@ export const UploadDropArea: React.FC<Props> = ({ maxFileSize, onFile }) => {
         onFiles(files) {
             if (files.length > 1) {
                 onError(101)
+                // @ts-expect-error
             } else if (files[0].size > maxFileSize) {
                 onError(102)
             } else {
+                // @ts-expect-error
                 onFile(files[0])
             }
         },
@@ -90,6 +92,7 @@ export const UploadDropArea: React.FC<Props> = ({ maxFileSize, onFile }) => {
     })
     const MAX_FILE_SIZE = formatFileSize(maxFileSize)
     const onInput = (event: React.FormEvent<HTMLInputElement>) => {
+        // @ts-expect-error
         const file = event.currentTarget.files?.item(0)
         if (isNil(file)) {
             onError(101)
