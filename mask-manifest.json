@@ -5,9 +5,6 @@
     "id": "com.maskbook.fileservice",
     "name": "__display_name",
     "description": "__description",
-    "version": "0.1.0",
-
-    "author": [{ "name": "Mask Network", "url": "https://mask.io" }],
 
     "supports": {
         "architecture": { "app": true, "web": true },
@@ -15,8 +12,8 @@
         "target": "stable"
     },
     "i18n": {
-        "folder": "./src/locales",
-        "supported": ["en-US", "zh-CN", "zh-TW", "ja-JP", "ko-KR"]
+        "files": "./src/locales",
+        "default": "en-US"
     },
     "contributions": {
         "metadataKeys": {
@@ -43,5 +40,10 @@
             }
         ],
         "backup": true
+    },
+    "entries": {
+        "background": "./src/worker/index.ts",
+        "rpc": "./src/worker/service.ts",
+        "content_script": "./src/site-adaptor/index.tsx"
     }
 }

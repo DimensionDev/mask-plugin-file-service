@@ -7,6 +7,9 @@
   "scripts": {
     "build": "mask-plugin-build"
   },
+  "contributors": [
+    { "name": "Mask Network", "url": "https://mask.io" }
+  ],
   "types": "./dist/index.d.ts",
   "devDependencies": {
     "@dimensiondev/common-protocols": "1.6.0-20210723072221-8f46a92",
