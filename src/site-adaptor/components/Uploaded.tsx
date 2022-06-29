@@ -12,7 +12,7 @@ import type { FileInfo } from '../../shared/types.js'
 import { FileName } from './FileName.js'
 import { resolveGatewayAPI } from '../../shared/helpers.js'
 import urlcat from 'urlcat'
-import { openWindow } from '@masknet/base'
+import { openWindow } from '@masknet/plugin'
 
 const useStyles = makeStyles()({
     container: {
