@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { useI18N } from '@masknet/plugin-hooks'
 import { showSnackbar } from '@masknet/plugin/ui'
 import { Entry } from './components/index.js'
-import { META_KEY_V2 } from '../shared/constants.js'
+import { META_KEY_2 } from '../shared/constants.js'
 import { Exchange } from './hooks/Exchange.js'
 import type { FileInfo, DialogCloseCallback } from '../shared/types.js'
 import { attachMetadata, dropMetadata, closeApplicationBoardDialog } from '@masknet/plugin/content-script'
@@ -13,6 +13,7 @@ import { attachMetadata, dropMetadata, closeApplicationBoardDialog } from '@mask
 interface Props {
     onClose: () => void
     open: boolean
+    isOpenFromApplicationBoard?: boolean
 }
 
 const useStyles = makeStyles()((theme) => ({
@@ -20,12 +21,7 @@ const useStyles = makeStyles()((theme) => ({
         alignSelf: 'center',
     },
     button: {
-        borderRadius: 26,
         marginTop: 24,
-        fontSize: 16,
-        lineHeight: 2.5,
-        paddingLeft: 35,
-        paddingRight: 35,
     },
     paper: {
         width: '600px !important',
@@ -49,9 +45,9 @@ const FileServiceDialog: React.FC<Props> = (props) => {
             return
         }
         if (selectedFileInfo) {
-            attachMetadata(META_KEY_V2, JSON.parse(JSON.stringify(selectedFileInfo)))
+            attachMetadata(META_KEY_2, JSON.parse(JSON.stringify(selectedFileInfo)))
         } else {
-            dropMetadata(META_KEY_V2)
+            dropMetadata(META_KEY_2)
         }
         closeApplicationBoardDialog()
         props.onClose()
@@ -81,6 +77,8 @@ const FileServiceDialog: React.FC<Props> = (props) => {
     }
     return (
         <MaskDialog
+            // @ts-expect-error
+            isOpenFromApplicationBoard={props.isOpenFromApplicationBoard}
             DialogProps={{ scroll: 'paper', classes: { paper: classes.paper } }}
             open={props.open}
             title={t.__display_name()}

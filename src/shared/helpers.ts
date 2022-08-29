@@ -19,7 +19,7 @@ export async function makeFileKeySigned(fileKey: string | undefined | null) {
 export const resolveGatewayAPI = (provider: Provider) => {
     return {
         [Provider.arweave]: 'https://arweave.net',
-        [Provider.ipfs]: 'https://infura-ipfs.io/ipfs',
-        [Provider.swarm]: 'https://bee-2.gateway.ethswarm.org/bzz',
+        [Provider.ipfs]: 'https://mask.infura-ipfs.io/ipfs',
+        [Provider.swarm]: 'https://gateway-proxy-bee-6-0.gateway.ethswarm.org/bzz',
     }[provider]
 }

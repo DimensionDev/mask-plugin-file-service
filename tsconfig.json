@@ -6,8 +6,6 @@
     ],
     "extends": "@masknet/configs/tsconfig.json",
     "compilerOptions": {
-        "types": ["@masknet/plugin-types"],
-        "lib": ["es2021"],
-        "moduleResolution": "Node"
+        "types": ["@masknet/plugin-types"]
     }
 }

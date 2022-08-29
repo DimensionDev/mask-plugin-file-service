@@ -1,11 +1,11 @@
+import { useEffect, useState } from 'react'
+import { useAsync } from 'react-use'
+import { File } from 'react-feather'
 import { Grid, Typography } from '@mui/material'
 import { makeStyles } from '@masknet/theme'
-import { useEffect, useState } from 'react'
-import { File } from 'react-feather'
-import { useNavigate, useLocation } from 'react-router-dom'
-import { useAsync } from 'react-use'
-import { useI18N } from '@masknet/plugin-hooks'
 import { timeout } from '@dimensiondev/kit'
+import { useNavigate, useLocation } from 'react-router-dom'
+import { useI18N } from '@masknet/plugin-hooks'
 import { FileRouter } from '../../shared/constants.js'
 import type { FileInfo, Provider } from '../../shared/types.js'
 import { worker as PluginFileServiceRPC, workerGenerator as PluginFileServiceRPCGenerator } from '@masknet/plugin'
@@ -54,10 +54,6 @@ export const Uploading: React.FC = () => {
     const [preparing, setPreparing] = useState(true)
     const [sendSize, setSendSize] = useState(0)
     const state = useLocation().state as RouteState
-    useEffect(() => {
-        onUploading(true)
-        return () => onUploading(false)
-    }, [onUploading])
     const { error } = useAsync(async () => {
         const currentProvider = state.provider as Provider
         const payloadTxID = await timeout(
@@ -96,12 +92,11 @@ export const Uploading: React.FC = () => {
             landingTxID,
         }
         await PluginFileServiceRPC.setFileInfo(item)
-        navigate(FileRouter.uploaded, { state: item })
+        navigate(FileRouter.Uploaded, { state: item })
     }, [])
     useEffect(() => {
-        if (error) {
-            onUploading(false)
-        }
+        onUploading(!error)
+        return () => onUploading(false)
     }, [error, onUploading])
     if (error) {
         return (

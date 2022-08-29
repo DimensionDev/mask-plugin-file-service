@@ -80,7 +80,7 @@ export function RecentFiles({ files, onMore }: Props) {
     const { classes: itemIconClasses } = useItemIconStyles()
     const { classes: itemTextClasses } = useItemTextStyles()
     const onClick = (info: FileInfo) => () => {
-        navigate(FileRouter.uploaded, { state: info })
+        navigate(FileRouter.Uploaded, { state: info })
     }
     const renderItem = (file: FileInfo, index: number) => (
         <ListItem classes={itemClasses} key={index} onClick={onClick(file)}>

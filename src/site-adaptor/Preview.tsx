@@ -7,7 +7,7 @@ import { CopyableCode } from './components/Copyable.jsx'
 import type { FileInfo } from '../shared/types.js'
 import { resolveGatewayAPI } from '../shared/helpers.js'
 import urlcat from 'urlcat'
-import { openWindow } from '@masknet/plugin'
+import { openWindow } from '@masknet/plugin/ui'
 import { usePluginWrapper } from '@masknet/plugin-hooks'
 
 const useStyles = makeStyles()((theme) => ({

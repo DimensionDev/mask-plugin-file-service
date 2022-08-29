@@ -1,18 +1,18 @@
-import { formatFileSize } from '@dimensiondev/kit'
-import { Button, Grid, Typography } from '@mui/material'
-import { makeStyles } from '@masknet/theme'
-import formatDateTime from 'date-fns/format'
 import { useEffect } from 'react'
 import { File } from 'react-feather'
 import { useNavigate, useLocation } from 'react-router-dom'
+import urlcat from 'urlcat'
+import { formatFileSize } from '@dimensiondev/kit'
+import { Button, Grid, Typography } from '@mui/material'
+import { openWindow } from '@masknet/plugin/ui'
+import { makeStyles } from '@masknet/theme'
+import {format as formatDateTime} from 'date-fns'
 import { useExchange } from '../hooks/Exchange.js'
 import { useI18N } from '@masknet/plugin-hooks'
 import { FileRouter } from '../../shared/constants.js'
 import type { FileInfo } from '../../shared/types.js'
 import { FileName } from './FileName.js'
 import { resolveGatewayAPI } from '../../shared/helpers.js'
-import urlcat from 'urlcat'
-import { openWindow } from '@masknet/plugin'
 
 const useStyles = makeStyles()({
     container: {
@@ -68,7 +68,7 @@ export const Uploaded: React.FC = () => {
     }, [onInsert, state])
     const onBack = () => {
         onInsert(null)
-        navigate(FileRouter.upload)
+        navigate(FileRouter.Prepare)
     }
 
     // return upload route
