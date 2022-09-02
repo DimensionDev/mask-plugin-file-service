@@ -3,47 +3,12 @@
     "manifest_version": 1,
 
     "id": "com.maskbook.fileservice",
-    "name": "__display_name",
-    "description": "__description",
-
-    "supports": {
-        "architecture": { "app": true, "web": true },
-        "networks": { "type": "opt-out", "networks": {} },
-        "target": "stable"
-    },
-    "i18n": {
-        "files": "./src/locales",
-        "default": "en-US"
-    },
-    "contributions": {
-        "metadataKeys": {
-            "1": { "schema": "./src/shared/schema-v1.json" },
-            "2": { "schema": "./src/shared/schema-v2.json" }
-        },
-        "applicationEntry": [
-            {
-                "name": "__display_name",
-                "description": "__plugin_description",
-                "category": "dapp",
-                "icon": "TODO: path to svg",
-                "tutorialLink": "https://realmasknetwork.notion.site/8c8fe1efce5a48b49739a38f4ea8c60f",
-
-                "action": {
-                    "type": "composition",
-                    "plugin": "self"
-                },
-
-                "applicationBoardSortPriority": 2,
-                "marketListSortPriority": 2,
-                // what is this used for?
-                "iconFilterColor": "rgba(247, 147, 30, 0.3)"
-            }
-        ],
-        "backup": true
-    },
     "entries": {
         "background": "./src/worker/index.ts",
-        "rpc": "./src/worker/service.ts",
-        "content_script": "./src/site-adaptor/index.tsx"
+        "content_script": "./src/site-adaptor/index.tsx",
+        "rpc": "./src/worker/service.ts"
+    },
+    "contributes": {
+        "backup": true
     }
 }

@@ -1,9 +1,9 @@
-import { addBackupHandler } from '@masknet/plugin/worker'
+import { registerBackupHandler } from '@masknet/plugin/worker'
 import { None, Result, Some } from 'ts-results'
 import type { FileInfo } from '../shared/types.js'
 import { getAllFiles, setFileInfo } from './database.js'
 
-addBackupHandler({
+registerBackupHandler({
     async onBackup() {
         const files = await getAllFiles()
         const result = files?.length ? new Some(files) : None
