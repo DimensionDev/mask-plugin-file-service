@@ -1,5 +1,9 @@
 import { formatFileSize } from '@dimensiondev/kit'
-import { registerMetadataRender, registerMetadataBadgeRender, registerCompositionEntry } from '@masknet/plugin/content-script'
+import {
+    registerMetadataRender,
+    registerMetadataBadgeRender,
+    registerCompositionEntry,
+} from '@masknet/plugin/content-script/react'
 import { truncate } from 'lodash-unified'
 import { FileInfoV1ToV2 } from '../shared/helpers.js'
 import type { FileInfo, FileInfoV1 } from '../shared/types.js'
