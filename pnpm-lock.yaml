@@ -3,15 +3,9 @@ lockfileVersion: 5.4
 onlyBuiltDependencies: []
 
 patchedDependencies:
-  arweave@1.11.4:
-    hash: lwxdtt2msovfmigiutpkaty3lq
-    path: patches/arweave@1.11.4.patch
   urlcat@2.0.4:
     hash: fggwetex7eobhq3hztj4obsulu
     path: patches/urlcat@2.0.4.patch
-  ipfs-http-client@57.0.3:
-    hash: 7oiabyd5hzeabolk22o64jpd4i
-    path: patches/ipfs-http-client@57.0.3.patch
   '@ethersphere/bee-js@5.0.0':
     hash: g3xomw7pzn5koufm6j4gkm6n5m
     path: patches/@ethersphere__bee-js@5.0.0.patch
@@ -48,9 +42,9 @@ devDependencies:
   '@mui/material': 5.8.1_@types+react@18.0.9
   '@types/lodash-es': 4.17.6
   '@types/react': 18.0.9
-  arweave: 1.11.4_lwxdtt2msovfmigiutpkaty3lq
+  arweave: 1.11.4
   date-fns: 2.28.0
-  ipfs-http-client: 57.0.3_7oiabyd5hzeabolk22o64jpd4i
+  ipfs-http-client: 57.0.3
   lodash-unified: 1.0.2_@types+lodash-es@4.17.6
   react-feather: 2.0.9
   react-router-dom: 6.3.0
@@ -522,7 +516,7 @@ packages:
       - debug
     dev: true
 
-  /arweave/1.11.4_lwxdtt2msovfmigiutpkaty3lq:
+  /arweave/1.11.4:
     resolution: {integrity: sha512-EPUms1OMet/VFmYMefgxIpj17PIlIZzIteiHAn0tetN+d/LRV6N9CCsrg/t22hL6yLGdGRHrYlDEdsWqjwSSYg==}
     engines: {node: '>=12'}
     dependencies:
@@ -535,7 +529,6 @@ packages:
     transitivePeerDependencies:
       - debug
     dev: true
-    patched: true
 
   /arweave/1.11.6:
     resolution: {integrity: sha512-D6N6e2z7oZoxFhu/qElLwQ2T8DxZ8xIqDB+Y16KHvZbassIrrS9iALwxLdaFYNInuyElg6i7qotBMcShWbFSTw==}
@@ -1066,7 +1059,7 @@ packages:
       - undici
     dev: true
 
-  /ipfs-http-client/57.0.3_7oiabyd5hzeabolk22o64jpd4i:
+  /ipfs-http-client/57.0.3:
     resolution: {integrity: sha512-IOqxcMei7Y2bxU2Se98YB+HEv2rZp9aTbkQjNY4XgoeG3eMp0zU/6tpguOHzC5a6SOCojZRrcAAZq2RAwdmrhg==}
     engines: {node: '>=15.0.0', npm: '>=3.0.0'}
     dependencies:
@@ -1093,7 +1086,6 @@ packages:
       - supports-color
       - undici
     dev: true
-    patched: true
 
   /ipfs-unixfs/6.0.9:
     resolution: {integrity: sha512-0DQ7p0/9dRB6XCb0mVCTli33GzIzSVx5udpJuVM47tGcD+W+Bl4LsnoLswd3ggNnNEakMv1FdoFITiEnchXDqQ==}
