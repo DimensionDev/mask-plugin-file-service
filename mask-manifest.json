@@ -10,5 +10,6 @@
     },
     "contributes": {
         "backup": true
-    }
+    },
+    "locales": "./src/locales/"
 }
