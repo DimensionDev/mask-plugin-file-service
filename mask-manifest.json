@@ -1,5 +1,5 @@
 {
-    "$schema": "../mask-plugin-infra/packages/mainfest/plugin.schema.json",
+    "$schema": "../mask-plugin-infra/packages/manifest/plugin.schema.json",
     "manifest_version": 1,
 
     "id": "com.maskbook.fileservice",
